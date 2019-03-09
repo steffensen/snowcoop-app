@@ -1,0 +1,88 @@
+#loginPage {
+  background-color: #a4d4f6;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in-box-wrapper {
+  height: 380px;
+  width: 450px;
+}
+
+.sign-in-box {
+  width: 100%;
+  height: 100%;
+}
+
+.el-card {
+  border: none;
+}
+
+.sign-in-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.el-input__inner {
+  height: 52px;
+  font-size: 18px;
+}
+
+.el-form-item {
+  margin-bottom: 33px;
+}
+
+.el-card__body {
+  height: 100%;
+  padding: 43px;
+}
+
+.form-header-wrapper {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.form-title-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.form-footer-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sign-in-button-wrapper > button {
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: #1974e8;
+  color: white;
+  border: none;
+}
+
+.text-button-wrapper {
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+}
+
+ .text-button-wrapper>a {
+   font-family: Roboto;
+   text-decoration: none;
+   font-size: 18px;
+   font-weight: bold;
+   color: #1974e8;
+ }
+
+button:disabled {
+  opacity: 0.5;
+}
