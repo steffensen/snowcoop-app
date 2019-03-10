@@ -11,6 +11,10 @@ body {
   min-height: 100vh;
 }
 
-.el-container > .el-main {
+.el-container>.el-main {
   padding: 0;
+}
+
+aside {
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.5);
 }

@@ -5,12 +5,24 @@ const AuthService = {
     return Axios.post('http://localhost:3000/auth/login', credentials)
       .then(response => {
         if (response.status === 200 || response.status === 201) {
-          const { payload } = response.data;
+          const {
+            payload
+          } = response.data;
           return payload;
         }
       });
   },
-
+  register(newUser) {
+    return Axios.post('http://localhost:3000/auth/register', newUser)
+      .then(response => {
+        if (response.status === 200 || response.status === 201) {
+          const {
+            payload
+          } = response.data;
+          return payload;
+        }
+      });
+  },
   setHeader(access_token) {
     Axios.defaults.headers.common['Authorization'] = access_token;
   },

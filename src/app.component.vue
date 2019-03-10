@@ -6,6 +6,7 @@
       </el-aside>
       <el-main>
         <router-view></router-view>
+        <dashboard-page v-if="isLogIn"/>
       </el-main>
     </el-container>
   </div>

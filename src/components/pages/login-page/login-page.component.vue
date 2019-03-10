@@ -8,10 +8,15 @@
         <div class="form-body-wrapper">
           <el-form :model="formData" ref="formData" @focusout.native="updateIsFormValidated">
             <el-form-item :rules="rules.email" prop="email">
-              <el-input placeholder="Email" v-model="formData.email"></el-input>
+              <el-input placeholder="Email" v-model="formData.email" autofocus></el-input>
             </el-form-item>
             <el-form-item :rules="rules.password" prop="password">
-              <el-input type="password" placeholder="Password" v-model="formData.password" show-password></el-input>
+              <el-input
+                type="password"
+                placeholder="Password"
+                v-model="formData.password"
+                show-password
+              ></el-input>
             </el-form-item>
           </el-form>
         </div>

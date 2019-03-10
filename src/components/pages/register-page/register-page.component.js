@@ -30,23 +30,46 @@ export default {
         passwordConfirm: null,
       },
       rules: {
-        firstName: [
-          { required: true, message: 'Please input first name', trigger: 'blur' },
+        firstName: [{
+          required: true,
+          message: 'Please input first name',
+          trigger: 'blur'
+        }, ],
+        lastName: [{
+          required: true,
+          message: 'Please input last name',
+          trigger: 'blur'
+        }, ],
+        email: [{
+            required: true,
+            message: 'Please input email address',
+            trigger: 'blur'
+          },
+          {
+            type: 'email',
+            message: 'Please input correct email address',
+            trigger: ['blur', 'change']
+          }
         ],
-        lastName: [
-          { required: true, message: 'Please input last name', trigger: 'blur' },
+        password: [{
+            required: true,
+            message: 'Please input password',
+            trigger: 'blur'
+          },
+          {
+            validator: passwordVadlidate,
+            trigger: 'blur'
+          }
         ],
-        email: [
-          { required: true, message: 'Please input email address', trigger: 'blur' },
-          { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
-        ],
-        password: [
-          { required: true, message: 'Please input password', trigger: 'blur' },
-          { validator: passwordVadlidate, trigger: 'blur' }
-        ],
-        passwordConfirm: [
-          { required: true, message: 'Please input password', trigger: 'blur' },
-          { validator: confirmValidate, trigger: 'blur' }
+        passwordConfirm: [{
+            required: true,
+            message: 'Please input password',
+            trigger: 'blur'
+          },
+          {
+            validator: confirmValidate,
+            trigger: 'blur'
+          }
         ]
       },
       isFormValidated: false,
@@ -61,5 +84,33 @@ export default {
         return acc && (valid || noError);
       }, true);
     },
+    register() {
+      if (this.isFormValidated) {
+        const newUser = {
+          firstName: this.formData.firstName,
+          lastName: this.formData.lastName,
+          email: this.formData.email,
+          password: this.formData.password,
+        };
+
+        this.$store.dispatch('REGISTER', newUser).then(
+          (user) => this.onRegisterSuccessful(user),
+          (error) => this.onRegisterFailed(error)
+        );
+      }
+    },
+    onRegisterSuccessful(user) {
+      if (!user) {
+        throw new Error('something whent wrong');
+      }
+
+      this.$router.push('dashboard');
+    },
+
+    onRegisterFailed(error) {
+      /*eslint-disable */
+      console.error(error);
+
+    }
   }
 };

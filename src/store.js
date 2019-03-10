@@ -28,7 +28,10 @@ const store = new Vuex.Store({
   actions: {
     LOG_IN: (context, payload) => {
       return AuthService.login(payload).then(async (payload) => {
-        const { user, token } = payload;
+        const {
+          user,
+          token
+        } = payload;
         AuthService.storeToken(token);
         AuthService.setHeader(token);
         await context.commit('SET_TOKEN', token);
@@ -38,6 +41,22 @@ const store = new Vuex.Store({
         return user;
       });
     },
+
+    REGISTER: (context, payload) => {
+      return AuthService.register(payload).then(async (payload) => {
+        const {
+          user,
+          token
+        } = payload;
+        AuthService.storeToken(token);
+        AuthService.setHeader(token);
+        await context.commit('SET_TOKEN', token);
+
+        AuthService.storeUser(user);
+        await context.commit('SET_USER', user);
+        return user;
+      });
+    }
   }
 });
 
