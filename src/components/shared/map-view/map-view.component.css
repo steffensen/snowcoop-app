@@ -1,0 +1,29 @@
+#mapView {
+  width: 100%;
+  height: 100%;
+}
+
+.map-view-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.map-wrapper {
+  width: 100%;
+}
+
+.address-item {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.address-list-wrapper {
+  min-width: fit-content;
+  overflow-y: scroll;
+}
+
+.address-item:hover,
+.current-place {
+  background-color: #a4d4f6;
+  color: white;
+}
