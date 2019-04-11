@@ -64,12 +64,3 @@ export default {
 
   }
 };
-// new Vue({
-//   el: '#app',
-//   mounted() {
-//     let input = document.querySelector('[autofocus]');
-//     if (input) {
-//       input.focus();
-//     }
-//   }
-// });
