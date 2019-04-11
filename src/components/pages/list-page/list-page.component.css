@@ -2,3 +2,21 @@
   width: 100%;
   height: 100%;
 }
+.list-wrapper {
+  padding:100px;
+}
+.map-view-card > .el-card__body {
+  padding: 0;
+}
+.list-header {
+  margin-bottom: 20px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-title {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: bold;
+}
