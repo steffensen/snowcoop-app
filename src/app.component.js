@@ -9,6 +9,7 @@ export default {
   },
   computed: {
     isLogIn() {
+      this.$router.push('dashboard');
       return this.$store.getters.IS_LOGIN
     }
   },

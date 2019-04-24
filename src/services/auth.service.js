@@ -24,7 +24,7 @@ const AuthService = {
       });
   },
   setHeader(access_token) {
-    Axios.defaults.headers.common['Authorization'] = access_token;
+    Axios.defaults.headers.common['Authorization'] = `bearer ${access_token}`;
   },
 
   storeToken(token) {
